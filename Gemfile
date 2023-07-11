@@ -54,6 +54,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails' # 追加
 end
 
 group :development do
@@ -69,9 +70,8 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
-  
-  gem 'rspec-rails' 
-  gem 'spring-commands-rspec' 
+
+  gem 'spring-commands-rspec'
 end
 
 group :test do
@@ -80,6 +80,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 
-  gem 'rspec-rails' 
   gem 'factory_bot_rails'
 end
