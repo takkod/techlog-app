@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!,except: [:show]
 
   def new
     @post = Post.new
@@ -16,7 +16,10 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
+  
+  def show
+    @post = Post.find_by(id: params[:id])
+  end
   private
 
   def post_params
