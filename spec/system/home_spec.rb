@@ -17,6 +17,9 @@ RSpec.describe 'Homes', type: :system do
   describe 'ナビゲーションバーの検証' do
     context 'ログインしていない場合' do
       before { visit '/' }
+      it 'ログ投稿リンクを表示しない' do 
+        expect(page).not_to have_link('ログ投稿', href: '/posts/new')
+      end
 
       it 'ユーザー登録リンクを表示する' do
         expect(page).to have_link('ユーザー登録', href: '/users/sign_up')
@@ -36,6 +39,9 @@ RSpec.describe 'Homes', type: :system do
         user = create(:user) # ログイン用のユーザーを作成
         sign_in user # 作成したユーザーでログイン
         visit '/'
+      end
+      it 'ログ投稿リンクを表示する' do 
+        expect(page).to have_link('ログ投稿', href: '/posts/new')
       end
 
       it 'ユーザー登録リンクは表示しない' do
