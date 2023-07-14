@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'home#top'
+  root 'posts#index'
 
-  resources :posts, only: [:new, :create, :show, :index, :destroy] # 追加
+  resources :posts, only: [:new, :create, :show, :destroy] 
 end
