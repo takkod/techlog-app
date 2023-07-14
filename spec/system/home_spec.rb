@@ -25,6 +25,10 @@ RSpec.describe 'Homes', type: :system do
         expect(page).to have_link('ユーザー登録', href: '/users/sign_up')
       end
 
+      it 'ログ一覧リンクを表示する' do 
+        expect(page).to have_link('ログ一覧', href: '/posts')
+      end
+
       it 'ログインリンクを表示する' do
         expect(page).to have_link('ログイン', href: '/users/sign_in')
       end
@@ -42,6 +46,10 @@ RSpec.describe 'Homes', type: :system do
       end
       it 'ログ投稿リンクを表示する' do 
         expect(page).to have_link('ログ投稿', href: '/posts/new')
+      end
+
+      it 'ログ一覧リンクを表示する' do 
+        expect(page).to have_link('ログ一覧', href: '/posts')
       end
 
       it 'ユーザー登録リンクは表示しない' do
