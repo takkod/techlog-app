@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User', type: :system do
-  before { driven_by :selenium_chrome_headless }
+  before { driven_by(:rack_test)}
 
   # ユーザー情報入力用の変数
   let(:email) { 'test@example.com' }

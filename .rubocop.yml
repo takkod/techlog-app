@@ -12,6 +12,7 @@ AllCops:
   # 新ルールを有効化
   NewCops: enable
 
+
 # 1行あたりの文字数をチェックする
 Layout/LineLength:
   Max: 130

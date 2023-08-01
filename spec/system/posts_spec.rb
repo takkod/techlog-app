@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Post', type: :system do
   before do
-    driven_by :selenium_chrome_headless # ヘッドレスモードで実行
+    driven_by(:rack_test)
     @user = create(:user) # ログイン用ユーザー作成
     @post = create(:post, title: 'RSpec学習完了', content: 'System Specを作成した', user_id: @user.id)
     @post2 = create(:post, title: 'RSpec学習完了 2', content: 'System Specを作成した 2', user_id: @user.id)
