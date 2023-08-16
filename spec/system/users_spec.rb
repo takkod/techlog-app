@@ -8,6 +8,7 @@ describe 'User', type: :system do
   let(:nickname) { 'テスト太郎' }
   let(:password) { 'password' }
   let(:password_confirmation) { password }
+  let(:password_form_input) { password }
 
   describe 'ユーザー登録機能の検証' do
     before { visit '/users/sign_up' }
@@ -23,9 +24,11 @@ describe 'User', type: :system do
 
     context '正常系' do
       it 'ユーザーを作成できる' do
-        expect { subject }.to change(User, :count).by(1) # Userが1つ増える
-        expect(page).to have_content('ユーザー登録に成功しました。')
+        ActionMailer::Base.deliveries.clear
+        subject
         expect(current_path).to eq('/') # ユーザー登録後はトップページにリダイレクト
+        expect(page).to have_content(I18n.t('devise.registrations.signed_up_but_unconfirmed'))
+        expect(ActionMailer::Base.deliveries.last.body).to include('You can confirm your account email through the link below:')
       end
     end
 
