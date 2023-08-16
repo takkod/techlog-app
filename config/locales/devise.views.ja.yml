@@ -48,6 +48,11 @@ ja:
     registrations:
       user:
         signed_up: ユーザー登録に成功しました。
+      signed_up_but_unconfirmed: 本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。
+    confirmations:
+      user:
+       confirmed: ユーザー登録に成功しました。
+      confirmed: ユーザー登録に成功しました。
     sessions:
       new:
         sign_in: ログイン

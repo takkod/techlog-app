@@ -2,7 +2,7 @@ version: '3'
 services:
   db:
     image: mysql/mysql-server:5.7.28
-    container_name: db
+    container_name: db-kodera-RailsDockerTutorial
     restart: always
     volumes:
       - ./forDocker/mysql/conf.d:/etc/mysql/conf.d
@@ -13,7 +13,7 @@ services:
       - MYSQL_ROOT_HOST=%
       - MYSQL_ROOT_PASSWORD=password
   web:
-    container_name: RailsDockerTutorial
+    container_name: kodera-RailsDockerTutorial
     tty: true
     stdin_open: true
     build: .
